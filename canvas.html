@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Thomas Lisowsky - Web Development</title>
+    <meta name="description" content="Navigation Bar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <link rel="stylesheet" href="resources/css/canvas.css">
+    <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+    <script src="resources/js/canvas.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-fixed-top navbar-inverse" id="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://thomas-lisowsky.de/main.html">Thomas Lisowsky</a>
+        </div>
+
+        <!-- navigation bar -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+
+            <ul class="nav navbar-nav">
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br/><br/><br/><br/>
+
+<div class="col-lg-6 col-lg-offset-3 title"><h1><b>Canvas Image Manipulation</b></h1><br/>
+    <h2>Try it out. Push some buttons. Drag some sliders.</h2><br/><br/></div>
+<section class="jumbotron col-lg-6 col-lg-offset-3">
+    <section class="container">
+        <div id="image-container">
+            <div id="canvas-container col-lg-6">
+                <canvas class="img" id="image"></canvas>
+            </div>
+            <label class="btn btn-success" id="uploadbutton" for="fileselect">Upload Your Own Image</label>
+        </div>
+        <form>
+            Brightness:
+            <output name="brghtoutput" id="brghtoutput" for="brght">0</output>
+            <input type="range" min="-100" max="100" id="brght" onclick="brghtoutput.value = brght.value">
+            Noise:
+            <output name="noiseoutput" id="noiseoutput" for="noise">0</output>
+            <input type="range" min="-100" max="100" id="noise" onclick="noiseoutput.value = noise.value">
+            Saturation:
+            <output name="saturateoutput" id="saturateoutput" for="saturate">0</output>
+            <input type="range" min="-100" max="100" id="saturate" onclick="saturateoutput.value = saturate.value">
+            Sepia:
+            <output name="sepiaoutput" id="sepiaoutput" for="sepia">0</output>
+            <input type="range" min="0" max="100" id="sepia" value="0" onclick="sepiaoutput.value = sepia.value">
+            <br />
+        </form>
+        <div class="btn btn-info" id="sunrise">Sunrise Filter</div>
+        <div class="btn btn-info" id="oldboot">Old Boot Filter</div>
+        <div class="btn btn-info" id="vintage">Vintage Filter</div>
+        <div class="btn btn-info" id="sincity">Sin City Filter</div>
+        <div class="btn btn-info" id="glowsun">Glow Sun Filter</div>
+        <br />
+        <div class="btn btn-default" id="reset">Reset Filters</div>
+        <div class="btn btn-default" id="standardimg">Load Standard Image</div>
+        <input class="btn btn-info" type="file" id="fileselect" accept="image/*" onchange="uploadImage(this.files)" onclick="resetFiles()">
+        <br />
+        <a class="btn btn-success" download="myImage.jpg" id="save">Download Image</a>
+    </section>
+</section>
+
+<!-- footer -->
+
+<footer class="container-fluid text-center col-lg-12">
+    <hr>
+    <div>
+        <p>The Canvas Manipulation webapp was built using the help of <a href="http://camanjs.com/">CamanJS</a>.<br />
+            The standard image was painted for me by <a href="http://vinnyvieh.tictail.com/">artist vinnyvieh</a>.</p>
+        <h6><a target="_blank" href="http://thomas-lisowsky.de/main.html">Thomas Lisowsky</a> 2016</h6>
+        <ul class="list-inline">
+            <li><a target="_blank" href="mailto:t.lisowsky@gmx.de">Email</a></li>
+            <li><a target="_blank" href="http://www.linkedin.com/">Linkedin</a></li>
+            <li><a target="_blank" href="https://github.com/TheCodyKnight">GitHub</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>
